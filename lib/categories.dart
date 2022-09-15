@@ -13,7 +13,7 @@ class Categories extends StatelessWidget {
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
       ),
-      children: [],
+      children: dummy_categories,
     );
   }
 }

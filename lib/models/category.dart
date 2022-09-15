@@ -1,17 +1,36 @@
+import 'dart:html';
+
+import 'package:flutter/rendering.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
 
-class Category {
+class Category extends StatelessWidget {
   final String id;
   final String title;
   final Color color;
 
   const Category(
       {required this.id, required this.title, this.color = Colors.orange});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(15),
+      child: Text(title),
+      color: color,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+            colors: [color.withOpacity(0.7), color],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight),
+        borderRadius: BorderRadius.circular(15),
+      ),
+    );
+  }
 }
 
+// ignore: constant_identifier_names
 const dummy_categories = [
   Category(id: "c1", title: "Italian", color: Colors.purple),
   Category(id: "c2", title: "Quick & Easy", color: Colors.red),
