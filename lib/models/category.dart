@@ -1,9 +1,3 @@
-import 'dart:html';
-
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
@@ -18,10 +12,10 @@ class Category extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(15),
       child: Text(title),
-      color: color,
+      // color: color,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-            colors: [color.withOpacity(0.7), color],
+            colors: [color.withOpacity(0.5), color],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight),
         borderRadius: BorderRadius.circular(15),

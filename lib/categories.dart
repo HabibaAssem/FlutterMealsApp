@@ -7,6 +7,7 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
+      padding: EdgeInsets.all(10),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200, //width
         childAspectRatio: 3 / 2, //reation between widthh and height
