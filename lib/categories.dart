@@ -6,11 +6,15 @@ class Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
+    print(width);
     return GridView(
-      padding: EdgeInsets.all(10),
-      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 200, //width
-        childAspectRatio: 3 / 2, //reation between widthh and height
+      padding: const EdgeInsets.all(15),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: (300 / 393) * width, //width
+        childAspectRatio: 4 / 3, //reation between widthh and height
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
       ),

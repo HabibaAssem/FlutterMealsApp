@@ -11,14 +11,21 @@ class Category extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      child: Text(title),
-      // color: color,
       decoration: BoxDecoration(
         gradient: LinearGradient(
             colors: [color.withOpacity(0.5), color],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight),
         borderRadius: BorderRadius.circular(15),
+      ),
+      child: Text(
+        title,
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+            fontFamily: 'Raleway',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black),
       ),
     );
   }
@@ -36,4 +43,6 @@ const dummy_categories = [
   Category(id: "c8", title: "Asian", color: Colors.lightGreen),
   Category(id: "c9", title: "French", color: Colors.pink),
   Category(id: "c10", title: "Summer", color: Colors.teal),
+  Category(id: "c11", title: "Turkish", color: Colors.deepOrange),
+  Category(id: "c12", title: "Korean", color: Colors.lime),
 ];

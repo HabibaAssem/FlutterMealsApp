@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Meals App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
+        accentColor: Colors.amber,
+        canvasColor: Color.fromARGB(255, 242, 242, 240),
+        fontFamily: 'Raleway',
       ),
       home: const MyHomePage(title: 'Meals'),
     );

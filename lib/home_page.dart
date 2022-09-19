@@ -13,7 +13,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        leading: const Icon(Icons.menu),
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            fontFamily: 'RobotoCndensed',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: const Categories(),
     );
