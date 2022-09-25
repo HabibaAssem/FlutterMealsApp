@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/category_meals.dart';
 
 class Category extends StatelessWidget {
   final String id;
@@ -7,25 +8,41 @@ class Category extends StatelessWidget {
 
   const Category(
       {required this.id, required this.title, this.color = Colors.orange});
+
+  void goToCategory(BuildContext ctx) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+      return CategoryMeal(
+        ID: id,
+        category: title,
+      );
+    }));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            colors: [color.withOpacity(0.5), color],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Text(
-        title,
-        textAlign: TextAlign.center,
-        style: const TextStyle(
-            fontFamily: 'Raleway',
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black),
+    return InkWell(
+      //like gesture detector bass beye3mel alwan we keda
+      splashColor: Theme.of(context).primaryColor,
+      borderRadius: BorderRadius.circular(15),
+      onTap: () => goToCategory(context),
+      child: Container(
+        padding: const EdgeInsets.all(15),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [color.withOpacity(0.5), color],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Text(
+          title,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+              fontFamily: 'Raleway',
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black),
+        ),
       ),
     );
   }
